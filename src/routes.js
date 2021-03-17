@@ -1,8 +1,8 @@
 
 import Dashboard from "components/corporate/Dashboard";
 import Activity from "components/corporate/Activity";
-import Payment from "components/corporate/Payment.js";
-import Booking from "components/corporate/Booking.js";
+import CheckOut from "components/corporate/Payment/CheckOut.js";
+import AddressForm from "components/corporate/Booking/Booking.js";
 import UserApps from "components/corporate/user/UserApps";
 import DeptApps from "components/corporate/department/DeptApps";
 import BudgetApps from "components/corporate/budget/BudgetApps";
@@ -20,7 +20,7 @@ const dashboardRoutes = [
   {
     path: "/activity",
     name: "Activity",
-    icon: "nc-icon nc-circle-09",
+    icon: "nc-icon nc-notes",
     component: Activity,
     layout: "/admin",
   },
@@ -28,7 +28,7 @@ const dashboardRoutes = [
   {
     path: "/employees",
     name: "Employees",
-    icon: "nc-icon nc-notes",
+    icon: "nc-icon nc-circle-09",
     component: UserApps,
     layout: "/admin",
   },
@@ -36,7 +36,7 @@ const dashboardRoutes = [
   {
     path: "/department",
     name: "Departments",
-    icon: "nc-icon nc-notes",
+    icon: "nc-icon nc-badge",
     component: DeptApps,
     layout: "/admin",
   },
@@ -50,15 +50,22 @@ const dashboardRoutes = [
   {
     path: "/payment",
     name: "payment",
-    icon: "nc-icon nc-atom",
-    component: Payment,
+    icon: "nc-icon nc-credit-card",
+    component: CheckOut,
     layout: "/admin",
   },
   {
     path: "/booking",
-    name: "visitor booking",
-    icon: "nc-icon nc-pin-3",
-    component: Booking,
+    name: "Visitor Booking",
+    icon: "nc-icon nc-watch-time",
+    component: AddressForm,
+    layout: "/admin",
+  },
+  {
+    path: "/setting",
+    name: "Setting",
+    icon: "nc-icon nc-settings-tool-66",
+  
     layout: "/admin",
   },
   

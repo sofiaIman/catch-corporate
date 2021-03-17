@@ -23,8 +23,7 @@ class Footer extends Component {
             </ul>
             <p className="copyright text-center">
               © {new Date().getFullYear()}{" "}
-              <a href="https://www.catch.et/">Catch Corporate Dashboard</a>, made with
-              love for a better web
+              <a href="https://www.catch.et/">Catch Corporate Dashboard</a>
             </p>
           </nav>
         </Container>

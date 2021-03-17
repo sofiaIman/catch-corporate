@@ -29,7 +29,7 @@ const AddUserForm = props => {
 			<label>Phone</label>
 			<input type="text" name="phone" value={user.phone} onChange={handleInputChange} />
 			
-			<button>Add new user</button>
+			<button>Add new Employee</button>
 		</form>
 	)
 }
