@@ -10,7 +10,24 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+
+
+import Box from '@material-ui/core/Box';
+
+import Popover from '@material-ui/core/Popover';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 
 
   const useStyles = makeStyles((theme) => ({
@@ -33,7 +50,7 @@ import Button from '@material-ui/core/Button';
     },
   }));
   
-  export default function AddressForm() {
+  export default function Booking() {
     const classes = useStyles();
     const [age, setAge] = React.useState('');
     const [activeStep, setActiveStep] = React.useState(0);
@@ -47,6 +64,20 @@ import Button from '@material-ui/core/Button';
     const handleBack = () => {
       setActiveStep(activeStep - 1);
     };
+    const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
     const steps = ['Shipping address', 'Payment details', 'Review your order'];
   return (
     <React.Fragment>
@@ -135,10 +166,51 @@ import Button from '@material-ui/core/Button';
                   >
                     {activeStep === steps.length - 1 ? 'Place order' : 'Book Now'}
                   </Button>
-                  <Button variant="contained"
-                  color="primary" onClick={handleBack} className={classes.button2}>
-                      Schedule Booking
-                    </Button>
+                  <Button variant="contained" color="primary" onClick={handleClickOpen}  className={classes.button2}>
+        Schedule Booking
+      </Button>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Schedule Booking </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Set Time
+          </DialogContentText>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container justify="space-around">
+        
+        <KeyboardDatePicker
+          margin="normal"
+          id="date-picker-dialog"
+          placeholder="Date picker dialog"
+          format="MM/dd/yyyy"
+          value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change date',
+          }}
+        />
+        <KeyboardTimePicker
+          margin="normal"
+          id="time-picker"
+          placeholder="Time picker"
+          value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change time',
+          }}
+        />
+      </Grid>
+    </MuiPickersUtilsProvider>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleClose} color="primary">
+            SET
+          </Button>
+        </DialogActions>
+      </Dialog>
       </Grid>
     </React.Fragment>
   );

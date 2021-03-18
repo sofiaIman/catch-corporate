@@ -2,7 +2,7 @@
 import Dashboard from "components/corporate/Dashboard";
 import Activity from "components/corporate/Activity";
 import CheckOut from "components/corporate/Payment/CheckOut.js";
-import AddressForm from "components/corporate/Booking/Booking.js";
+import Booking from "components/corporate/Booking/Booking.js";
 import UserApps from "components/corporate/user/UserApps";
 import DeptApps from "components/corporate/department/DeptApps";
 import BudgetApps from "components/corporate/budget/BudgetApps";
@@ -42,7 +42,7 @@ const dashboardRoutes = [
   },
   {
     path: "/budget",
-    name: "budget",
+    name: "Budget",
     icon: "nc-icon nc-paper-2",
     component: BudgetApps,
     layout: "/admin",
@@ -58,7 +58,7 @@ const dashboardRoutes = [
     path: "/booking",
     name: "Visitor Booking",
     icon: "nc-icon nc-watch-time",
-    component: AddressForm,
+    component: Booking,
     layout: "/admin",
   },
   {
