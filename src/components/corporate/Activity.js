@@ -30,6 +30,14 @@ function createData(name,price) {
     history: [
       { date: '2020-01-05', employeeId: 'John', time: '3:00 pm', price :200 },
       { date: '2020-01-02', employeeId: 'Jane', time: '1:00 pm', price :400 },
+      { date: <div>
+        <img src={require("assets/img/mapplaceholder.PNG").default}
+        class="centerImage"
+                width="380" height="120"
+                img-align = "center"
+                alt="..."/>
+       </div>
+    }
     ],
   };
 }
@@ -62,10 +70,10 @@ function Row(props) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Employee</TableCell>
-                    <TableCell align="right">Time</TableCell>
-                    <TableCell align="right">Total price ($)</TableCell>
+                    <TableCell><h6>Date</h6></TableCell>
+                    <TableCell><h6>Employee</h6></TableCell>
+                    <TableCell align="right"><h6>Time</h6></TableCell>
+                    <TableCell align="right"><h6>Total price ($)</h6></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

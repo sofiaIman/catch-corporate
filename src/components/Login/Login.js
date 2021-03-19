@@ -35,7 +35,7 @@ function Login() {
                 <div className="logo" ref={el => logos = el}>
                    { <img src={logo} alt="logo" /> }
                 </div>
-                <h6 ref={el => headers = el}>Welcome to Catch</h6>
+                <h5 ref={el => headers = el } > Welcome to Catch Corporate</h5>
                 <form ref={el => form = el}>
                     <div className="fields">
                       <label> </label><br />
