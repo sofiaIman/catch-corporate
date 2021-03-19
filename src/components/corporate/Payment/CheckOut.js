@@ -18,7 +18,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       
-      
+      Payment
     </Typography>
   );
 }
@@ -60,7 +60,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Personal Details', 'Payment details', 'Review your order'];
+
+const steps = ['Personal Details', 'Payment details', 'Review your payment'];
 
 function getStepContent(step) {
   switch (step) {
@@ -90,17 +91,11 @@ export default function Checkout() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="absolute" color="default" className={classes.appBars}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      
       <main className={classes.layouts}>
         <Paper className={classes.papers}>
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            Make Payments
           </Typography>
           <Stepper activeStep={activeStep} className={classes.steppers}>
             {steps.map((label) => (

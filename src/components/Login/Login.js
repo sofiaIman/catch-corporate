@@ -3,10 +3,13 @@ import './Login.css';
 import img1 from './main_car.jpg';
 import logo from './logo.PNG';
 import {TweenMax} from 'gsap';
+
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 
-function HomePage() {
+
+function Login() {
     let imgs = useRef(null);
     let headers = useRef(null);
     let logos = useRef(null);
@@ -25,27 +28,30 @@ function HomePage() {
              <div className="banner" ref={el => imgs = el}>
                 <img src={img1} alt="main-img" />
              </div>
-             <p className="copyright">© 2020 Catch.  All rights reserved</p>
+             
           </div>
           <div className="separate" id="form-section">
              <div className="form-style">
                 <div className="logo" ref={el => logos = el}>
                    { <img src={logo} alt="logo" /> }
                 </div>
-                <h3 ref={el => headers = el}>Welcome to Catch</h3>
+                <h6 ref={el => headers = el}>Welcome to Catch</h6>
                 <form ref={el => form = el}>
                     <div className="fields">
-                      <label>Username: </label><br />
-                      <input type="email" placeholder="Enter your email" />
+                      <label> </label><br />
+                      <input type="email" placeholder=" Username" />
                     </div>
                     <div className="fields">
-                      <label>Password:</label><br />
-                      <input type="password" placeholder="Enter your password" />
+                      <label></label><br />
+                      <input type="password" placeholder="Password" />
                      
-                      
+                      <FormControlLabel
+                      control={<Checkbox color="success" name="saveDetails" value="yes" />}
+                      label="Remember me"
+                    />   
                       
                     </div>
-                    <input type="submit" value="Login" className="submit-btn" />
+                    <input type="submit" value="Login" className="submit-btns" />
                    
                     
                 </form>
@@ -59,4 +65,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default Login;

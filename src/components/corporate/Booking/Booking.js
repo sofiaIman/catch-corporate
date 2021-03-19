@@ -33,7 +33,7 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
   const useStyles = makeStyles((theme) => ({
     formControl: {
       margin: theme.spacing(1),
-      minWidth: 600,
+      minWidth: 546,
     },
     selectEmpty: {
       marginTop: theme.spacing(2),
@@ -82,7 +82,7 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Visitor Booking
+        <h6> Book for a Visitor </h6>
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
@@ -105,7 +105,7 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
             autoComplete="family-name"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6}>
           <TextField
             required
             id="mobileno"

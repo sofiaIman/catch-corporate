@@ -35,13 +35,13 @@ function Header() {
               <Nav.Link
                
               >
-                <Link className="no-icon" to="Login">Log out</Link>
-                <Switch>
-  <Redirect exact from="/" to="Login/Login" />
-  <Route path="Login/Login">
-    <HomePage />
-  </Route>
-  </Switch>
+              <Link className="no-icon" to="/Login">Log out</Link>
+              <Switch>
+<Redirect exact from="/" to="Login/Login" />
+<Route path="Login/Login">
+  <HomePage />
+</Route>
+</Switch>
               </Nav.Link>
             </Nav.Item>
          

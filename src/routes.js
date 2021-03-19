@@ -6,13 +6,14 @@ import Booking from "components/corporate/Booking/Booking.js";
 import UserApps from "components/corporate/user/UserApps";
 import DeptApps from "components/corporate/department/DeptApps";
 import BudgetApps from "components/corporate/budget/BudgetApps";
+import Settings from "components/corporate/settings/Settings";
 
 const dashboardRoutes = [
   
   {
     path: "/dashboard",
     name: "Dashboard",
-    icon: "nc-icon nc-chart-pie-35",
+    icon: "nc-icon nc-grid-45",
     component: Dashboard,
     layout: "/admin",
   },
@@ -49,7 +50,7 @@ const dashboardRoutes = [
   },
   {
     path: "/payment",
-    name: "payment",
+    name: "Payment",
     icon: "nc-icon nc-credit-card",
     component: CheckOut,
     layout: "/admin",
@@ -63,9 +64,9 @@ const dashboardRoutes = [
   },
   {
     path: "/setting",
-    name: "Setting",
+    name: "Settings",
     icon: "nc-icon nc-settings-tool-66",
-  
+    component: Settings,
     layout: "/admin",
   },
   
