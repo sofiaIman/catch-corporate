@@ -31,7 +31,11 @@ function createData(name,price) {
       { date: '2020-01-05', employeeId: 'John', time: '3:00 pm', price :200 },
       { date: '2020-01-02', employeeId: 'Jane', time: '1:00 pm', price :400 },
       { date: <div>
+<<<<<<< Updated upstream
         <img src={require("assets/img/mapplaceholder.PNG").default}
+=======
+        <img src={require("assets/img/mapplaceholder.png").default}
+>>>>>>> Stashed changes
         class="centerImage"
                 width="380" height="120"
                 img-align = "center"

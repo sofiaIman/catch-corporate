@@ -3,10 +3,16 @@ import Dashboard from "components/corporate/Dashboard";
 import Activity from "components/corporate/Activity";
 import CheckOut from "components/corporate/Payment/CheckOut.js";
 import Booking from "components/corporate/Booking/Booking.js";
-import UserApps from "components/corporate/user/UserApps";
+import Main from "components/corporate/Dep/Main.js";
+import Mains from "components/corporate/Dept/Main.js";
 import DeptApps from "components/corporate/department/DeptApps";
 import BudgetApps from "components/corporate/budget/BudgetApps";
+<<<<<<< Updated upstream
 import Settings from "components/corporate/settings/Settings";
+=======
+import Setting from "components/corporate/Setting/Setting";
+import HomePage from "components/Login/Login";
+>>>>>>> Stashed changes
 
 const dashboardRoutes = [
   
@@ -30,7 +36,7 @@ const dashboardRoutes = [
     path: "/employees",
     name: "Employees",
     icon: "nc-icon nc-circle-09",
-    component: UserApps,
+    component: Main,
     layout: "/admin",
   },
   
@@ -38,7 +44,7 @@ const dashboardRoutes = [
     path: "/department",
     name: "Departments",
     icon: "nc-icon nc-badge",
-    component: DeptApps,
+    component: Mains,
     layout: "/admin",
   },
   {
@@ -66,8 +72,19 @@ const dashboardRoutes = [
     path: "/setting",
     name: "Settings",
     icon: "nc-icon nc-settings-tool-66",
+<<<<<<< Updated upstream
     component: Settings,
+=======
+    component: Setting,
+>>>>>>> Stashed changes
     layout: "/admin",
+  },
+  {
+    path: "/login",
+    
+    
+    component: HomePage,
+    
   },
   
 ];

@@ -18,9 +18,9 @@ function Login() {
 
     useEffect(()=>{
       TweenMax.to(imgs, 1, {delay: 0.4, opacity: 1 , ease: 'easeOut'})
-      TweenMax.to(logos, 2, {delay: 1.5, opacity: 1, ease: 'easeOut'})
-      TweenMax.to(headers, 2, {delay: 2, opacity: 1, ease: 'easeOut'})
-      TweenMax.to(form, 2, {delay: 2.5, opacity: 1, ease: 'easeOut'})
+      TweenMax.to(logos, 2, {delay: 0.4, opacity: 1, ease: 'easeOut'})
+      TweenMax.to(headers, 2, {delay: 0.4, opacity: 1, ease: 'easeOut'})
+      TweenMax.to(form, 2, {delay: 0.4, opacity: 1, ease: 'easeOut'})
     })
     return (
       <div className="wrappers">
@@ -35,7 +35,11 @@ function Login() {
                 <div className="logo" ref={el => logos = el}>
                    { <img src={logo} alt="logo" /> }
                 </div>
+<<<<<<< Updated upstream
                 <h5 ref={el => headers = el } > Welcome to Catch Corporate</h5>
+=======
+                <h6 ref={el => headers = el}>Welcome to Catch</h6>
+>>>>>>> Stashed changes
                 <form ref={el => form = el}>
                     <div className="fields">
                       <label> </label><br />

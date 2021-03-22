@@ -20,10 +20,10 @@ const AddUserForm = props => {
 				setUser(initialFormState)
 			}}
 		>
-			<label>Name</label>
-			<input type="text" name="name" value={user.name} onChange={handleInputChange} />
-			<label>Email</label>
-			<input type="text" name="email" value={user.email} onChange={handleInputChange} />
+			
+			<input type="text" name="name" value={user.name} onChange={handleInputChange}  placeholder="Name"/>
+			
+			<input type="text" name="email" value={user.email} onChange={handleInputChange} plcae />
 			<label>Department</label>
 			<input type="text" name="department" value={user.department} onChange={handleInputChange} />
 			<label>Phone</label>

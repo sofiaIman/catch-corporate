@@ -77,7 +77,7 @@ const UserApps = () => {
 						</Fragment>
 					) : (
 						<Fragment>
-							<h8>Add Employee</h8>
+							<h8 >Add Employee</h8>
 							<AddUserForm addUser={addUser} />
 						</Fragment>
 					)}

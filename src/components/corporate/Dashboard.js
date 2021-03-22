@@ -8,13 +8,16 @@ import Billing from './Billing';
 import Trips from './Trips';
 import Chart from './Chart';
 
+
+
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
   toolbar: {
-    paddingRight: 24,
+    paddingRight: 24, // keep right padding when drawer closed
   },
   toolbarIcon: {
     display: 'flex',
@@ -23,14 +26,30 @@ const useStyles = makeStyles((theme) => ({
     padding: '0 8px',
     ...theme.mixins.toolbar,
   },
-  
-    menuButton: {
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
     marginRight: 36,
   },
   menuButtonHidden: {
     display: 'none',
   },
- 
+  title: {
+    flexGrow: 1,
+  },
   drawerPaper: {
     position: 'relative',
     whiteSpace: 'nowrap',
@@ -51,9 +70,14 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(9),
     },
   },
-  
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto',
+  },
   container: {
-    paddingTop: theme.spacing(1),
+    paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
   paper: {
@@ -80,6 +104,7 @@ export default function Sidebar() {
 
   return (
     <div className={classes.root}>
+    
     
    
       <main className={classes.content}>
