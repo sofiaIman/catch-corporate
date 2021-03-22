@@ -61,11 +61,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-<<<<<<< Updated upstream
 const steps = ['Personal Details', 'Payment details', 'Review your payment'];
-=======
-const steps = ['Personal Details', 'Payment details', 'Review your Payment'];
->>>>>>> Stashed changes
 
 function getStepContent(step) {
   switch (step) {

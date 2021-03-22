@@ -5,14 +5,15 @@ import CheckOut from "components/corporate/Payment/CheckOut.js";
 import Booking from "components/corporate/Booking/Booking.js";
 import Main from "components/corporate/Dep/Main.js";
 import Mains from "components/corporate/Dept/Main.js";
-import DeptApps from "components/corporate/department/DeptApps";
+
 import BudgetApps from "components/corporate/budget/BudgetApps";
-<<<<<<< Updated upstream
-import Settings from "components/corporate/settings/Settings";
-=======
+
+
+
 import Setting from "components/corporate/Setting/Setting";
 import HomePage from "components/Login/Login";
->>>>>>> Stashed changes
+
+
 
 const dashboardRoutes = [
   
@@ -70,13 +71,9 @@ const dashboardRoutes = [
   },
   {
     path: "/setting",
-    name: "Settings",
+    name: "Setting",
     icon: "nc-icon nc-settings-tool-66",
-<<<<<<< Updated upstream
-    component: Settings,
-=======
     component: Setting,
->>>>>>> Stashed changes
     layout: "/admin",
   },
   {

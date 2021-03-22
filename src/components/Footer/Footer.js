@@ -22,11 +22,7 @@ class Footer extends Component {
               
               
             </ul>
-<<<<<<< Updated upstream
             <p className="copyright">
-=======
-            <p className="copyright ">
->>>>>>> Stashed changes
               © {new Date().getFullYear()}{" "}
               <a>Catch Corporate Dashboard</a>
             </p>

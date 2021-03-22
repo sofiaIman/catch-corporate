@@ -35,11 +35,7 @@ function Login() {
                 <div className="logo" ref={el => logos = el}>
                    { <img src={logo} alt="logo" /> }
                 </div>
-<<<<<<< Updated upstream
                 <h5 ref={el => headers = el } > Welcome to Catch Corporate</h5>
-=======
-                <h6 ref={el => headers = el}>Welcome to Catch</h6>
->>>>>>> Stashed changes
                 <form ref={el => form = el}>
                     <div className="fields">
                       <label> </label><br />

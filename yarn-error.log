@@ -1,35 +1,36 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ARAN Technologies\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react scripts
+  C:\Program Files\nodejs\node.exe C:\Users\Yusra\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
-  C:\Python39\Scripts\;C:\Python39\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\dotnet;"%PATH%;C:\Program Files (x86)\Java\jre7\bin";";C:\cygwin64\bin;C:\Program Files\Java\jdk1.8.0_201\bin;C:\...\Java\bin;C:\Program Files\Java\jdk-10.0.2\bin;C:\xampp\php;C:\composer;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\PuTTY\;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\";C:\Users\ARAN Technologies\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Users\ARAN Technologies\AppData\Local\Programs\Python\Python38\Scripts;C:\Users\ARAN Technologies\AppData\Local\Programs\Python\Python38;C:\Users\ARAN Technologies\AppData\Local\Microsoft\WindowsApps;C:\Users\ARAN Technologies\AppData\Local\Programs\Microsoft VS Code\bin;C:\cygwin64\bin;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Program Files\Java\jdk-10.0.2\bin;C:\Users\ARAN Technologies\AppData\Roaming\Composer\vendor\bin;C:\Program Files\nodejs;C:\Users\ARAN Technologies\AppData\Roaming\npm;C:\Users\ARAN Technologies\.dotnet\tools
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Yusra\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\PuTTY;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files (x86)\GnuPG\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Yusra\AppData\Local\Programs\Python\Python37\Scripts;C:\Users\Yusra\AppData\Local\Programs\Python\Python37;C:\Users\Yusra\AppData\Local\Microsoft\WindowsApps;C:\Users\Yusra\AppData\Roaming\Composer\vendor\bin;C:\Users\Yusra\AppData\Roaming\npm;C:\Users\Yusra\AppData\Local\GitHubDesktop\bin
 
 Yarn version: 
   1.22.10
 
 Node version: 
-  14.15.1
+  14.2.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz: ESOCKETTIMEDOUT
-      at ClientRequest.<anonymous> (C:\Users\ARAN Technologies\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141289:19)
-      at Object.onceWrapper (events.js:421:28)
-      at ClientRequest.emit (events.js:315:20)
-      at TLSSocket.emitRequestTimeout (_http_client.js:784:9)
-      at Object.onceWrapper (events.js:421:28)
-      at TLSSocket.emit (events.js:327:22)
-      at TLSSocket.Socket._onTimeout (net.js:483:8)
-      at listOnTimeout (internal/timers.js:554:17)
-      at processTimers (internal/timers.js:497:7)
+  SyntaxError: C:\Users\Yusra\catch\catch-corporate\package.json: Unexpected token < in JSON at position 89
+      at JSON.parse (<anonymous>)
+      at C:\Users\Yusra\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Yusra\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\Yusra\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
     "name": "light-bootstrap-dashboard-react",
     "version": "2.0.0",
     "dependencies": {
+  <<<<<<< Updated upstream
+      "@date-io/date-fns": "^1.3.13",
+  =======
+      "@date-io/date-fns": "1.3.13",
+  >>>>>>> Stashed changes
       "@fortawesome/fontawesome-free": "5.15.2",
       "@material-ui/core": "^4.11.3",
       "@material-ui/icons": "^4.11.2",
@@ -44,7 +45,7 @@ npm manifest:
       "material-ui-popup-state": "^1.7.2",
       "mdbreact": "^5.0.1",
       "node-sass": "4.14.1",
-      "react": "17.0.1",
+      "react": "^17.0.1",
       "react-bootstrap": "1.4.3",
       "react-chartist": "0.14.3",
       "react-dom": "17.0.1",
@@ -52,7 +53,8 @@ npm manifest:
       "react-router": "5.2.0",
       "react-router-dom": "5.2.0",
       "react-scripts": "^4.0.3",
-      "recharts": "^2.0.8"
+      "recharts": "^2.0.8",
+      "scripts": "^0.1.0"
     },
     "optionalDependencies": {
       "jquery": "3.5.1",
@@ -1279,7 +1281,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
     integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
   
-  "@date-io/core@1.x", "@date-io/core@^1.1.0":
+  "@date-io/core@1.x", "@date-io/core@^1.1.0", "@date-io/core@^1.3.13":
     version "1.3.13"
     resolved "https://registry.yarnpkg.com/@date-io/core/-/core-1.3.13.tgz#90c71da493f20204b7a972929cc5c482d078b3fa"
     integrity sha512-AlEKV7TxjeK+jxWVKcCFrfYAk8spX9aCyiToFIiLPtfQbsjmRGLIhb5VZgptQcJdHtLXo7+m0DuurwFgUToQuA==
@@ -1290,6 +1292,17 @@ Lockfile:
     integrity sha512-FMRhYWfoGiIXdN4xWAArpkdEbqsg2Fr+6Yda7Np2eVWCNx6gSMYsHIM51IIcI+3762ajYbhoEYjHYXVFNZIk1g==
     dependencies:
       "@date-io/core" "^1.1.0"
+  
+  <<<<<<< Updated upstream
+  "@date-io/date-fns@^1.3.13":
+  =======
+  "@date-io/date-fns@1.3.13":
+  >>>>>>> Stashed changes
+    version "1.3.13"
+    resolved "https://registry.yarnpkg.com/@date-io/date-fns/-/date-fns-1.3.13.tgz#7798844041640ab393f7e21a7769a65d672f4735"
+    integrity sha512-yXxGzcRUPcogiMj58wVgFjc9qUYrCnnU9eLcyNbsQCmae4jPuZCDoIBR21j8ZURsM7GRtU62VOw5yNd4dDHunA==
+    dependencies:
+      "@date-io/core" "^1.3.13"
   
   "@date-io/moment@1.3.5":
     version "1.3.5"
@@ -11311,7 +11324,7 @@ Lockfile:
       loose-envify "^1.4.0"
       prop-types "^15.6.2"
   
-  react@17.0.1:
+  react@17.0.1, react@^17.0.1:
     version "17.0.1"
     resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
     integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
@@ -12054,6 +12067,11 @@ Lockfile:
       "@types/json-schema" "^7.0.6"
       ajv "^6.12.5"
       ajv-keywords "^3.5.2"
+  
+  scripts@^0.1.0:
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/scripts/-/scripts-0.1.0.tgz#3eb19713b5ad1f58bc3e39ce63606d6beaa00693"
+    integrity sha1-PrGXE7WtH1i8PjnOY2Bta+qgBpM=
   
   scss-tokenizer@^0.2.3:
     version "0.2.3"

@@ -35,7 +35,6 @@ function Header() {
               <Nav.Link
                
               >
-<<<<<<< Updated upstream
               <Link className="no-icon" to="/Login">Log out</Link>
               <Switch>
 <Redirect exact from="/" to="Login/Login" />
@@ -43,15 +42,6 @@ function Header() {
   <HomePage />
 </Route>
 </Switch>
-=======
-                <Link className="no-icon" to="/Login">Log out</Link>
-                <Switch>
-  <Redirect exact from="/" to="Login/Login" />
-  <Route path="Login/Login">
-    <HomePage />
-  </Route>
-  </Switch>
->>>>>>> Stashed changes
               </Nav.Link>
             </Nav.Item>
          
