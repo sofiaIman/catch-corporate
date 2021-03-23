@@ -32,17 +32,17 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
-      width: 600,
-      marginLeft: 'auto',
-      marginRight: 'auto',
+      width: 850,
+      marginLeft: '30px',
+      
     },
   },
   papers: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
     marginBottom: theme.spacing(3),
     padding: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
-      marginTop: theme.spacing(6),
+      marginTop: theme.spacing(1),
       marginBottom: theme.spacing(6),
       padding: theme.spacing(3),
     },

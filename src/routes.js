@@ -3,8 +3,9 @@ import Dashboard from "components/corporate/Dashboard";
 import Activity from "components/corporate/Activity";
 import CheckOut from "components/corporate/Payment/CheckOut.js";
 import Booking from "components/corporate/Booking/Booking.js";
+
+import Mains from "components/corporate/Dept/Mains.js";
 import Main from "components/corporate/Dep/Main.js";
-import Mains from "components/corporate/Dept/Main.js";
 
 import BudgetApps from "components/corporate/budget/BudgetApps";
 

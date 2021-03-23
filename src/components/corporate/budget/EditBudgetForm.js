@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+
 const EditBudgetForm = props => {
   const [ user, setUser ] = useState(props.currentUser)
 
@@ -16,8 +17,12 @@ const EditBudgetForm = props => {
 
     setUser({ ...user, [name]: value })
   }
+  
+  
 
   return (
+    
+    
     <form
       onSubmit={event => {
         event.preventDefault()
@@ -35,6 +40,7 @@ const EditBudgetForm = props => {
         Cancel
       </button>
     </form>
+  
   )
 }
 

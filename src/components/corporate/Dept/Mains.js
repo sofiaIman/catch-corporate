@@ -1,24 +1,23 @@
 import React from 'react';
-//import './App.css';
-//import SideMenu from "./SideMenu";
 import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
-//import Header from "./Header";
-//import PageHeader from './PageHeader';
+import Employees from "./pages/Employees/Employees";
 
-import Department from "./pages/Department/Department";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#333996",
-      light: '#3c44b126'
+      light: '#3c44b126',
+      
+
     },
     secondary: {
       main: "#f83245",
-      light: '#f8324526'
+      light: '#f8324526',
+      
     },
     background: {
-      default: "#f4f5fd"
+      default: "#f4f5fd",
     },
   },
   overrides:{
@@ -38,9 +37,9 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles({
   appMain: {
-   
     width: '100%',
-    marginTop:'-35px'
+    //marginTop: '-50px'
+ 
   }
 })
 
@@ -53,7 +52,7 @@ function Mains() {
       <div className={classes.appMain}>
         
         
-        <Department />
+        <Employees />
       </div>
       <CssBaseline />
     </ThemeProvider>

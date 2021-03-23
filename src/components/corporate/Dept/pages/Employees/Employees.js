@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import DepartmentForm from "./DepartmentForm";
+import EmployeeForm from "./EmployeeForm";
 import PageHeader from "components/corporate/Dept/PageHeader";
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
 import useTable from "components/corporate/Dept/useTable";
-import * as departmentService from "components/corporate/Dept/services/departmentService";
+import * as employeeService from "components/corporate/Dept/services/employeeService";
 import Controls from "components/corporate/Dept/controls/Controls";
 import { Search } from "@material-ui/icons";
 import AddIcon from '@material-ui/icons/Add';
@@ -14,7 +14,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
-        margin: theme.spacing(5),
+       
         padding: theme.spacing(3)
     },
     searchInput: {
@@ -28,18 +28,18 @@ const useStyles = makeStyles(theme => ({
 
 
 const headCells = [
-    { id: 'deptName', label: 'Department Name' },
-    { id: 'Noofemployee', label: 'Employee No' },
-    { id: 'deptAdmin', label: 'Department Admin' },
-    { id: 'vehicleType', label: 'Vehicle Type' },
+    { id: 'depName', label: 'Department Name' },
+    { id: 'empNo', label: 'Employee No (Total)' },
+    { id: 'admin', label: 'Department Admin' },
+    { id: 'vType', label: 'vehicle type' },
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
-export default function Department() {
+export default function Employees() {
 
     const classes = useStyles();
     const [recordForEdit, setRecordForEdit] = useState(null)
-    const [records, setRecords] = useState(departmentService.getAllDepartment())
+    const [records, setRecords] = useState(employeeService.getAllEmployees())
     const [filterFn, setFilterFn] = useState({ fn: items => { return items; } })
     const [openPopup, setOpenPopup] = useState(false)
 
@@ -57,20 +57,20 @@ export default function Department() {
                 if (target.value == "")
                     return items;
                 else
-                    return items.filter(x => x.fullName.toLowerCase().includes(target.value))
+                    return items.filter(x => x.depName&&x.depName.toLowerCase&&x.depName.toLowerCase().includes(target.value))
             }
         })
     }
 
-    const addOrEdit = (department, resetForm) => {
-        if (department.id == 0)
-        departmentService.insertDepartment(department)
+    const addOrEdit = (employee, resetForm) => {
+        if (employee.id == 0)
+            employeeService.insertEmployee(employee)
         else
-        departmentService.updateDepartment(department)
+            employeeService.updateEmployee(employee)
         resetForm()
         setRecordForEdit(null)
         setOpenPopup(false)
-        setRecords(departmentService.getAllDepartment())
+        setRecords(employeeService.getAllEmployees())
     }
 
     const openInPopup = item => {
@@ -85,7 +85,7 @@ export default function Department() {
 
                 <Toolbar>
                     <Controls.Input
-                        label="Search Department"
+                        label="Search Departments"
                         className={classes.searchInput}
                         InputProps={{
                             startAdornment: (<InputAdornment position="start">
@@ -108,10 +108,10 @@ export default function Department() {
                         {
                             recordsAfterPagingAndSorting().map(item =>
                                 (<TableRow key={item.id}>
-                                    <TableCell>{item.deptName}</TableCell>
-                                    <TableCell>{item.Noofemployee}</TableCell>
-                                    <TableCell>{item.deptAdmin}</TableCell>
-                                    <TableCell>{item.vehicleType}</TableCell>
+                                    <TableCell>{item.depName}</TableCell>
+                                    <TableCell>{item.empNo}</TableCell>
+                                    <TableCell>{item.admin}</TableCell>
+                                    <TableCell>{item.vType}</TableCell>
                                     <TableCell>
                                         <Controls.ActionButton
                                             color="primary"
@@ -135,7 +135,7 @@ export default function Department() {
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >
-                <DepartmentForm
+                <EmployeeForm
                     recordForEdit={recordForEdit}
                     addOrEdit={addOrEdit} />
             </Popup>

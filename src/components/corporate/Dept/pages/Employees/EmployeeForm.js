@@ -2,36 +2,43 @@ import React, { useState, useEffect } from 'react'
 import { Grid, } from '@material-ui/core';
 import Controls from "components/corporate/Dept/controls/Controls";
 import { useForm, Form } from 'components/corporate/Dept/useForm';
+import * as employeeService from 'components/corporate/Dept/services/employeeService';
 
 
-
-
+const genderItems = [
+    { id: 'male', title: 'Male' },
+    { id: 'female', title: 'Female' },
+    { id: 'other', title: 'Other' },
+]
 
 const initialFValues = {
     id: 0,
-    deptName: '',
-    NoofEmployees: '',
-    deptAdmin: '',
-    vehicleType: '',
+    depName: '',
+    empNo: '',
+    admin: '',
+    vType: '',
     
-   
+    
 }
 
-export default function DepartmentForm(props) {
+export default function EmployeeForm(props) {
     const { addOrEdit, recordForEdit } = props
 
     const validate = (fieldValues = values) => {
         let temp = { ...errors }
-        if ('deptName' in fieldValues)
-            temp.deptName = fieldValues.deptName ? "" : "This field is required."
-        if ('NoofEmployees' in fieldValues)
-            temp.NoofEmployees = fieldValues.NoofEmployees ? "" : "This field is required."
-        if ('deptAdmin' in fieldValues)
-            temp.deptAdmin = fieldValues.deptAdmin ? "" : "This field is required."
+        if ('depName' in fieldValues)
+            temp.depName = fieldValues.depName ? "" : "This field is required."
+     
+        if ('empNo' in fieldValues)
+            temp.empNo = fieldValues.empNo ? "" : "This field is required."
+
+        if ('admin' in fieldValues)
+            temp.admin = fieldValues.admin ? "" : "This field is required."
        
-        setErrors({
-            ...temp
-        })
+        if ('vType' in fieldValues)
+            temp.vType = fieldValues.vType ? "" : "This field is required."
+        
+        
 
         if (fieldValues == values)
             return Object.values(temp).every(x => x == "")
@@ -65,36 +72,37 @@ export default function DepartmentForm(props) {
             <Grid container>
                 <Grid item xs={6}>
                     <Controls.Input
-                        name="deptName"
+                        name="depName"
                         label="Department Name"
-                        value={values.deptName}
+                        value={values.depName}
                         onChange={handleInputChange}
-                        error={errors.deptName}
+                        error={errors.depName}
                     />
                     <Controls.Input
-                        label="Employee No"
-                        name="NoofEmployee"
-                        value={values.NoofEmployee}
+                        label="Employee Number"
+                        name="empNo"
+                        value={values.empNo}
                         onChange={handleInputChange}
-                        error={errors.NoofEmployee}
+                        error={errors.empNo}
                     />
                     <Controls.Input
                         label="Department Admin"
-                        name="deptAdmin"
-                        value={values.deptAdmin}
+                        name="admin"
+                        value={values.admin}
                         onChange={handleInputChange}
-                        error={errors.deptAdmin}
+                        error={errors.admin}
                     />
                     <Controls.Input
-                        label="Vehicle Type"
-                        name="vehicleType"
-                        value={values.vehicleType}
+                        label="vehicle type"
+                        name="vType"
+                        value={values.vType}
                         onChange={handleInputChange}
                     />
 
-            
+                </Grid>
+
                 
-                   
+
                     <div>
                         <Controls.Button
                             type="submit"
@@ -105,7 +113,7 @@ export default function DepartmentForm(props) {
                             onClick={resetForm} />
                     </div>
                 </Grid>
-            </Grid>
+        
         </Form>
     )
 }

@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
+import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
@@ -35,6 +36,16 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
       margin: theme.spacing(1),
       minWidth: 546,
     },
+    papers: {
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(3),
+      padding: theme.spacing(2),
+      [theme.breakpoints.up(600 + theme.spacing(3) * 2)]: {
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(6),
+        padding: theme.spacing(3),
+      },
+    },
     selectEmpty: {
       marginTop: theme.spacing(2),
     },
@@ -46,7 +57,8 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
     button2: {
       marginTop: theme.spacing(3),
       marginLeft: theme.spacing(1),
-      marginLeft:300
+      marginLeft:300,
+      marginBottom : theme.spacing(3)
     },
   }));
   
@@ -81,6 +93,7 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
     const steps = ['Shipping address', 'Payment details', 'Review your order'];
   return (
     <React.Fragment>
+    <Paper className={classes.papers}>
       <Typography variant="h6" gutterBottom>
         <h6> Book for a Visitor </h6>
       </Typography>
@@ -212,6 +225,7 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
         </DialogActions>
       </Dialog>
       </Grid>
+      </Paper>
     </React.Fragment>
   );
 }

@@ -5,6 +5,7 @@ import { useLocation, Route, Switch } from "react-router-dom";
 import AdminNavbar from "components/Navbars/AdminNavbar";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
+import Grid from '@material-ui/core/Grid';
 
 
 import routes from "routes.js";
@@ -47,7 +48,7 @@ function Admin() {
   }, [location]);
   return (
     <>
-      <div className="wrapper">
+      <Grid className="wrapper">
         <Sidebar color={color} image={hasImage ? image : ""} routes={routes} />
         <div className="main-panel" ref={mainPanel}>
           <AdminNavbar />
@@ -56,7 +57,7 @@ function Admin() {
           </div>
           <Footer />
         </div>
-      </div>
+      </Grid>
       
     </>
   );
