@@ -1,15 +1,10 @@
-
 import React from "react";
 import { useLocation, Route, Switch } from "react-router-dom";
-
 import AdminNavbar from "components/Navbars/AdminNavbar";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
-import Grid from '@material-ui/core/Grid';
-
-
+import Grid from '@material-ui/core/Grid';   
 import routes from "routes.js";
-
 import sidebarImage from "assets/img/sidebar-3.jpg";
 
 function Admin() {
