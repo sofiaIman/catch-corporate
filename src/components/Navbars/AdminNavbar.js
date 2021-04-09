@@ -2,7 +2,7 @@
 import React from "react";
 import { useLocation , Link,Route, Switch, Redirect} from "react-router-dom";
 import { Navbar, Container, Nav} from "react-bootstrap";
-import HomePage from '../Login/Login';
+
 
 import routes from "routes.js";
 
@@ -35,13 +35,8 @@ function Header() {
               <Nav.Link
                
               >
-              <Link className="no-icon" to="/Login">Log out</Link>
-              <Switch>
-<Redirect exact from="/" to="Login/Login" />
-<Route path="Login/Login">
-  <HomePage />
-</Route>
-</Switch>
+              <Link className="no-icon" to="/login">Log out</Link>
+             
               </Nav.Link>
             </Nav.Item>
          

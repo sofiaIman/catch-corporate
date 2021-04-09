@@ -12,7 +12,7 @@ import BudgetApps from "components/corporate/budget/BudgetApps";
 
 
 import Setting from "components/corporate/Setting/Setting";
-import HomePage from "components/Login/Login";
+import Login from "components/Login/Login";
 
 
 
@@ -81,7 +81,7 @@ const dashboardRoutes = [
     path: "/login",
     
     
-    component: HomePage,
+    component: Login,
     
   },
   
