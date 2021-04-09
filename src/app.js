@@ -18,7 +18,7 @@ function App() {
         <Switch>
         <Route path="/admin" render={(props) => <Admin {...props} />} />
         <Redirect from="/" to="/admin/dashboard" />
-          <Route path="/login" component={Login} />  
+          <Route path="/Login" component={Login} />  
         </Switch>
       </BrowserRouter>
     </Fragment>

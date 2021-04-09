@@ -79,9 +79,9 @@ const dashboardRoutes = [
   },
   {
     path: "/login",
+    component:Login,
     
     
-    component: Login,
     
   },
   
