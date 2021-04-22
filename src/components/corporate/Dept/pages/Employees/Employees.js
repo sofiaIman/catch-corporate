@@ -11,6 +11,9 @@ import AddIcon from '@material-ui/icons/Add';
 import Popup from "components/corporate/Dept/Popup";
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import CloseIcon from '@material-ui/icons/Close';
+import { useLocation , Link,Route, Switch, Redirect} from "react-router-dom";
+import Main from "components/corporate/Dep/Main.js";
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
@@ -78,6 +81,7 @@ export default function Employees() {
         setOpenPopup(true)
     }
 
+
     return (
         <>
             
@@ -95,7 +99,14 @@ export default function Employees() {
                         onChange={handleSearch}
                     />
                     <Controls.Button
-                        text="Add New"
+                        text="Import Csv"
+                        variant="outlined"
+                        startIcon={<GetAppIcon />}
+                        className={classes.newButton}
+                        onClick={() => { setOpenPopup(true); setRecordForEdit(null); }}
+                    />
+                    <Controls.Button
+                        text="Add"
                         variant="outlined"
                         startIcon={<AddIcon />}
                         className={classes.newButton}
@@ -107,8 +118,8 @@ export default function Employees() {
                     <TableBody>
                         {
                             recordsAfterPagingAndSorting().map(item =>
-                                (<TableRow key={item.id}>
-                                    <TableCell>{item.depName}</TableCell>
+                                (<TableRow key={item.id} >
+                                    <TableCell  >{item.depName}</TableCell>
                                     <TableCell>{item.empNo}</TableCell>
                                     <TableCell>{item.admin}</TableCell>
                                     <TableCell>{item.vType}</TableCell>
@@ -123,7 +134,9 @@ export default function Employees() {
                                             <CloseIcon fontSize="small" />
                                         </Controls.ActionButton>
                                     </TableCell>
-                                </TableRow>)
+                                </TableRow>
+                             
+                                )
                             )
                         }
                     </TableBody>

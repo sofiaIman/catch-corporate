@@ -22,9 +22,9 @@ import {
 const BudgetApps = () => {
     // Data
     const usersData = [
-        { id: 1, name: 'Company Budget',  budget: '$10000'},
-        { id: 2, name: 'Department Budget',  budget: '$8000'},
-        { id: 3, name: 'Employee Budget',  budget: '$100' },
+        { id: 1, name: 'Company Budget',  budget: '$10000', paymentmethod: 'visa card'},
+        { id: 2, name: 'Department Budget',  budget: '$8000', paymentmethod: 'Mpesa'},
+        { id: 3, name: 'Employee Budget',  budget: '$100', paymentmethod: 'Master card' },
     ]
 
 

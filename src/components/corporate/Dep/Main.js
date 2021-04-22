@@ -10,15 +10,15 @@ import Employees from "./pages/Employees/Employees";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#333996",
-      light: '#3c44b126'
+      main: "#556B2F",
+      light: '#C2D6A1'
     },
     secondary: {
       main: "#f83245",
       light: '#f8324526'
     },
     background: {
-      default: "#f4f5fd"
+      default: "#C2D6A1"
     },
   },
   overrides:{

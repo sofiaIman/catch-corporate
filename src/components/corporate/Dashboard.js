@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Billing from './Billing';
 import Trips from './Trips';
 import Chart from './Chart';
+import Total from './Total';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -63,7 +64,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 240,
+    height: 280,
+  },
+  grheight: {
+    height: 180,
   },
 }));
 export default function Sidebar() {
@@ -76,7 +80,7 @@ export default function Sidebar() {
         setOpen(false);
       };
       const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
- 
+      const grheightpaper = clsx(classes.paper, classes.grheight);
 
   return (
     <div className={classes.root}>
@@ -88,21 +92,28 @@ export default function Sidebar() {
           <Grid container spacing={3}>
             
             {/* Recent Billing */}
-            <Grid item xs={12} md={4} lg={5}>
-              <Paper className={fixedHeightPaper}>
+            <Grid item xs={12} md={4} lg={4}>
+              <Paper className={grheightpaper}>
                 <Billing />
               </Paper>
             </Grid>
             
             {/* Recent Trips */}
-            <Grid item xs={12} md={4} lg={5}>
-              <Paper className={fixedHeightPaper}>
+            <Grid item xs={12} md={4} lg={4}>
+              <Paper className={grheightpaper}>
                 <Trips />
               </Paper>
             </Grid>
+
+             {/* Total employees */}
+             <Grid item xs={12} md={4} lg={4}>
+             <Paper className={grheightpaper}>
+               <Total />
+             </Paper>
+           </Grid>
             
             {/* Chart */}
-            <Grid item xs={12} md={8} lg={10}>
+            <Grid item xs={12} md={8} lg={12}>
               <Paper className={fixedHeightPaper}>
                 <Chart />
               </Paper>

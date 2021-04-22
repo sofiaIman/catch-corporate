@@ -149,6 +149,17 @@ import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
           />
         </Grid>
         
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="department"
+            name="department"
+            placeholder="Department"
+            fullWidth
+            autoComplete=" address-line3"
+          />
+        </Grid>
+        
         
         <Grid item xs={12}>
         <FormControl className={classes.formControl} item xs={12}>

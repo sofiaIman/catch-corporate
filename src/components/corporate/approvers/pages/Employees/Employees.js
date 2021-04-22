@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import EmployeeForm from "./EmployeeForm";
-import PageHeader from "components/corporate/Deps/PageHeader";
+import PageHeader from "components/corporate/Dep/PageHeader";
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import { Paper, makeStyles, TableBody, TableRow, TableCell, Toolbar, InputAdornment } from '@material-ui/core';
-import useTable from "components/corporate/Deps/useTable";
-import * as employeeService from "components/corporate/Deps/services/employeeService";
-import Controls from "components/corporate/Deps/controls/Controls";
+import useTable from "components/corporate/Dep/useTable";
+import * as employeeService from "components/corporate/Dep/services/employeeService";
+import Controls from "components/corporate/Dep/controls/Controls";
 import { Search } from "@material-ui/icons";
 import AddIcon from '@material-ui/icons/Add';
-import Popup from "components/corporate/Deps/Popup";
+import Popup from "components/corporate/Dep/Popup";
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
-        //margin: theme.spacing(5),
+     
         padding: theme.spacing(3)
     },
     searchInput: {
@@ -28,10 +28,9 @@ const useStyles = makeStyles(theme => ({
 
 
 const headCells = [
-    { id: 'depName', label: 'Department Name' },
-    { id: 'empNo', label: 'Employee No (Total)' },
-    { id: 'admin', label: 'Department Admin' },
-    { id: 'vType', label: 'vehicle type' },
+    { id: 'fullName', label: 'Approver Name' },
+    { id: 'email', label: 'Email Address' },
+    { id: 'mobile', label: 'Mobile Number' },
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
@@ -57,7 +56,7 @@ export default function Employees() {
                 if (target.value == "")
                     return items;
                 else
-                    return items.filter(x => x.depName&&x.depName.toLowerCase&&x.depName.toLowerCase().includes(target.value))
+                    return items.filter(x => x.fullName.toLowerCase().includes(target.value))
             }
         })
     }
@@ -85,7 +84,7 @@ export default function Employees() {
 
                 <Toolbar>
                     <Controls.Input
-                        label="Search Departments"
+                        label="Search Employees"
                         className={classes.searchInput}
                         InputProps={{
                             startAdornment: (<InputAdornment position="start">
@@ -108,10 +107,9 @@ export default function Employees() {
                         {
                             recordsAfterPagingAndSorting().map(item =>
                                 (<TableRow key={item.id}>
-                                    <TableCell>{item.depName}</TableCell>
-                                    <TableCell>{item.empNo}</TableCell>
-                                    <TableCell>{item.admin}</TableCell>
-                                    <TableCell>{item.vType}</TableCell>
+                                    <TableCell>{item.fullName}</TableCell>
+                                    <TableCell>{item.email}</TableCell>
+                                    <TableCell>{item.mobile}</TableCell>
                                     <TableCell>
                                         <Controls.ActionButton
                                             color="primary"
@@ -131,7 +129,7 @@ export default function Employees() {
                 <TblPagination />
             </Paper>
             <Popup
-                title="Department Form"
+                title="Approver Form"
                 openPopup={openPopup}
                 setOpenPopup={setOpenPopup}
             >

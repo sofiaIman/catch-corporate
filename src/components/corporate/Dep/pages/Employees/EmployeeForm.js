@@ -17,6 +17,7 @@ const initialFValues = {
     email: '',
     mobile: '',
     city: '',
+    role: '',
     gender: 'male',
     departmentId: '',
     hireDate: new Date(),
@@ -34,6 +35,8 @@ export default function EmployeeForm(props) {
             temp.email = (/$^|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid."
         if ('mobile' in fieldValues)
             temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required."
+        if ('role' in fieldValues)
+            temp.role = fieldValues.role ? "" : "This field is required."
         if ('departmentId' in fieldValues)
             temp.departmentId = fieldValues.departmentId.length != 0 ? "" : "This field is required."
         setErrors({
@@ -96,6 +99,12 @@ export default function EmployeeForm(props) {
                         label="City"
                         name="city"
                         value={values.city}
+                        onChange={handleInputChange}
+                    />
+                    <Controls.Input
+                        label="Role"
+                        name="role"
+                        value={values.role}
                         onChange={handleInputChange}
                     />
 

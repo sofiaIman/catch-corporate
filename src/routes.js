@@ -1,20 +1,19 @@
 
 import Dashboard from "components/corporate/Dashboard";
 import Activity from "components/corporate/Activity";
-import CheckOut from "components/corporate/Payment/CheckOut.js";
+import Options from "components/corporate/Payment/Options.js";
 import Booking from "components/corporate/Booking/Booking.js";
 
-import Mains from "components/corporate/Dept/Mains.js";
+//import Mains from "components/corporate/Dept/Mains.js";
 import Main from "components/corporate/Dep/Main.js";
-
+import approve from "components/corporate/approvers/approve";
 import BudgetApps from "components/corporate/budget/BudgetApps";
 
-
-
 import Setting from "components/corporate/Setting/Setting";
-import Login from "components/Login/Login";
-
-
+import HomePage from "components/Login/Login";
+import Checkout from "components/corporate/Payment/CheckOut";
+import Checkmpesa from "components/corporate/Payment/Mpesa/CheckMpesa";
+import SimplePaper from "components/corporate/DepSetting/DeptSetting";
 
 const dashboardRoutes = [
   
@@ -25,7 +24,6 @@ const dashboardRoutes = [
     component: Dashboard,
     layout: "/admin",
   },
-
   {
     path: "/activity",
     name: "Activity",
@@ -33,22 +31,20 @@ const dashboardRoutes = [
     component: Activity,
     layout: "/admin",
   },
-
   {
     path: "/employees",
-    name: "Employees",
-    icon: "nc-icon nc-circle-09",
+    name: "Manage",
+    icon: "nc-icon nc-badge",
     component: Main,
     layout: "/admin",
   },
-  
-  {
-    path: "/department",
-    name: "Departments",
-    icon: "nc-icon nc-badge",
-    component: Mains,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/department",
+  //   name: "Departments",
+  //   icon: "nc-icon nc-badge",
+  //   component: Mains,
+  //   layout: "/admin",
+  // },
   {
     path: "/budget",
     name: "Budget",
@@ -60,7 +56,7 @@ const dashboardRoutes = [
     path: "/payment",
     name: "Payment",
     icon: "nc-icon nc-credit-card",
-    component: CheckOut,
+    component: Options,
     layout: "/admin",
   },
   {
@@ -68,6 +64,20 @@ const dashboardRoutes = [
     name: "Visitor Booking",
     icon: "nc-icon nc-watch-time",
     component: Booking,
+    layout: "/admin",
+  },
+  {
+    path: "/approvers",
+    name: "Approvers",
+    icon: "nc-icon nc-circle-09",
+    component: approve,
+    layout: "/admin",
+  },
+  {
+    path: "/departmentSetting",
+    name: "Department Setting",
+    icon: "nc-icon nc-alien-33",
+    component: SimplePaper,
     layout: "/admin",
   },
   {
@@ -79,11 +89,20 @@ const dashboardRoutes = [
   },
   {
     path: "/login",
-    component:Login,
-    
-    
+    component: HomePage,
     
   },
+  {
+    path: "/CheckOut",
+    component: Checkout,
+    layout: "/admin",
+  },
+  {
+    path: "/CheckMpesa",
+    component: Checkmpesa,
+    layout: "/admin",
+  },
+  
   
 ];
 

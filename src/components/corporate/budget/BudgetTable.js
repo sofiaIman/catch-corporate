@@ -7,6 +7,7 @@ const BudgetTable = props => (
       <tr>
         <th>Name</th>
         <th>Budget</th>
+        <th>Payment Method</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -16,7 +17,7 @@ const BudgetTable = props => (
           <tr key={user.id}>
             <td>{user.name}</td>
             <td>{user.budget}</td>
-            
+            <td>{user.paymentmethod}</td>
             <td>
               <button 
                 onClick={() => {

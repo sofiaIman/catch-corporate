@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, } from '@material-ui/core';
-import Controls from "components/corporate/Deps/controls/Controls";
-import { useForm, Form } from 'components/corporate/Deps/useForm';
-import * as employeeService from 'components/corporate/Deps/services/employeeService';
+import Controls from "components/corporate/Dep/controls/Controls";
+import { useForm, Form } from 'components/corporate/Dep/useForm';
+import * as employeeService from 'components/corporate/Dep/services/employeeService';
 
 
 const genderItems = [
@@ -13,11 +13,12 @@ const genderItems = [
 
 const initialFValues = {
     id: 0,
-    depName: '',
-    empNo: '',
-    admin: '',
-    vType: '',
+    fullName: '',
+    email: '',
+    mobile: '',
+    gender: 'male',
     
+    approvalDate: new Date(),
     
 }
 
@@ -26,19 +27,16 @@ export default function EmployeeForm(props) {
 
     const validate = (fieldValues = values) => {
         let temp = { ...errors }
-        if ('depName' in fieldValues)
-            temp.depName = fieldValues.depName ? "" : "This field is required."
-     
-        if ('empNo' in fieldValues)
-            temp.empNo = fieldValues.empNo ? "" : "This field is required."
-
-        if ('admin' in fieldValues)
-            temp.admin = fieldValues.admin ? "" : "This field is required."
+        if ('fullName' in fieldValues)
+            temp.fullName = fieldValues.fullName ? "" : "This field is required."
+        if ('email' in fieldValues)
+            temp.email = (/$^|.+@.+..+/).test(fieldValues.email) ? "" : "Email is not valid."
+        if ('mobile' in fieldValues)
+            temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required."
        
-        if ('vType' in fieldValues)
-            temp.vType = fieldValues.vType ? "" : "This field is required."
-        
-        
+        setErrors({
+            ...temp
+        })
 
         if (fieldValues == values)
             return Object.values(temp).every(x => x == "")
@@ -72,37 +70,42 @@ export default function EmployeeForm(props) {
             <Grid container>
                 <Grid item xs={6}>
                     <Controls.Input
-                        name="depName"
-                        label="Department Name"
-                        value={values.depName}
+                        name="fullName"
+                        label="Full Name"
+                        value={values.fullName}
                         onChange={handleInputChange}
-                        error={errors.depName}
+                        error={errors.fullName}
                     />
                     <Controls.Input
-                        label="Employee Number"
-                        name="empNo"
-                        value={values.empNo}
+                        label="Email"
+                        name="email"
+                        value={values.email}
                         onChange={handleInputChange}
-                        error={errors.empNo}
+                        error={errors.email}
                     />
                     <Controls.Input
-                        label="Department Admin"
-                        name="admin"
-                        value={values.admin}
+                        label="Mobile"
+                        name="mobile"
+                        value={values.mobile}
                         onChange={handleInputChange}
-                        error={errors.admin}
+                        error={errors.mobile}
                     />
-                    <Controls.Input
-                        label="vehicle type"
-                        name="vType"
-                        value={values.vType}
-                        onChange={handleInputChange}
-                    />
-
                 </Grid>
-
-                
-
+                <Grid item xs={6}>
+                    <Controls.RadioGroup
+                        name="gender"
+                        label="Gender"
+                        value={values.gender}
+                        onChange={handleInputChange}
+                        items={genderItems}
+                    />
+                    
+                    <Controls.DatePicker
+                        name="approvalDate"
+                        label="Approval Date"
+                        value={values.approvalDate}
+                        onChange={handleInputChange}
+                    />
                     <div>
                         <Controls.Button
                             type="submit"
@@ -113,7 +116,7 @@ export default function EmployeeForm(props) {
                             onClick={resetForm} />
                     </div>
                 </Grid>
-        
+            </Grid>
         </Form>
     )
 }

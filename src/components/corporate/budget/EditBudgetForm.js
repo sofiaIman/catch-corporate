@@ -34,6 +34,8 @@ const EditBudgetForm = props => {
       <input type="text" name="name" value={user.name} onChange={handleInputChange} />
       <label>Budget</label>
       <input type="text" name="budget" value={user.budget} onChange={handleInputChange} />
+      <label>Payment Method</label>
+      <input type="text" name="paymentmethod" value={user.paymentmethod} onChange={handleInputChange} />
       
       <button>Update Budget</button>
       <button onClick={() => props.setEditing(false)} className="button muted-button">

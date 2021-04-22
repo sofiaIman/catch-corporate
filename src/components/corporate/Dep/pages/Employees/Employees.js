@@ -32,6 +32,7 @@ const headCells = [
     { id: 'email', label: 'Email Address (Personal)' },
     { id: 'mobile', label: 'Mobile Number' },
     { id: 'department', label: 'Department' },
+    { id: 'role', label: 'Role' },
     { id: 'actions', label: 'Actions', disableSorting: true }
 ]
 
@@ -57,7 +58,7 @@ export default function Employees() {
                 if (target.value == "")
                     return items;
                 else
-                    return items.filter(x => x.fullName&&x.fullName.toLowerCase&&x.fullName.toLowerCase().includes(target.value))
+                    return items.filter(x => x.fullName.toLowerCase().includes(target.value))
             }
         })
     }
@@ -112,6 +113,7 @@ export default function Employees() {
                                     <TableCell>{item.email}</TableCell>
                                     <TableCell>{item.mobile}</TableCell>
                                     <TableCell>{item.department}</TableCell>
+                                    <TableCell>{item.role}</TableCell>
                                     <TableCell>
                                         <Controls.ActionButton
                                             color="primary"

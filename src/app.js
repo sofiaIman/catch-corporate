@@ -1,28 +1,25 @@
-import React, { Fragment } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
-import  AuthRoute from "./auth/authRoute";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./assets/css/animate.min.css";
-import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
-import "./assets/css/demo.css";
-import Login from './components/Login/Login';
-//import "@fortawesome/fontawesome-free/css/all.min.css";
-import Admin from "layouts/Admin.js";
+/*import React, { Fragment } from "react";
 
-function App() {
+import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
+import Admin from "layouts/Admin.js";
+import Login from "layouts/Login.js";
+
+function app() {
   return (
     <Fragment>
+   
       <BrowserRouter>
-      
+      <Link to="/admin/dashboard">Home</Link>
+      <br/>
+      <Link to="/login">Login</Link>
         <Switch>
-        <Route path="/admin" render={(props) => <Admin {...props} />} />
-        <Redirect from="/" to="/admin/dashboard" />
-          <Route path="/Login" component={Login} />  
+          <Route path="/admin/dashboard" component={Admin} />
+          <Route path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     </Fragment>
   );
 }
 
-export default App;
+export default app;
+*/

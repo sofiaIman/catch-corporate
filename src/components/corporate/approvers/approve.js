@@ -1,23 +1,24 @@
 import React from 'react';
+//import './App.css';
+//import SideMenu from "./SideMenu";
 import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
-import Employees from "./pages/Employees/Employees";
+//import Header from "./Header";
+//import PageHeader from './PageHeader';
 
+import Employees from "./pages/Employees/Employees";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#333996",
-      light: '#3c44b126',
-      
-
+      main: "#734A12",
+      light: '#D2CCC1'
     },
     secondary: {
       main: "#f83245",
-      light: '#f8324526',
-      
+      light: '#f8324526'
     },
     background: {
-      default: "#f4f5fd",
+      default: "#E1CFB5"
     },
   },
   overrides:{
@@ -37,13 +38,12 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles({
   appMain: {
-    width: '100%',
-    //marginTop: '-50px'
- 
+   
+    width: '100%'
   }
 })
 
-function Main() {
+function approve() {
   const classes = useStyles();
 
   return (
@@ -59,4 +59,4 @@ function Main() {
   );
 }
 
-export default Main
+export default approve
